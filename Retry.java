@@ -37,13 +37,11 @@ class Circuit {
 		}
 		
 		String estado = "unknown";
-			if (result > limiteErr) {
+			if (nActualIntento > nMaxIntentos) {
 				estado = "OPEN";
 			} else if (nActualIntento < nMaxIntentos) {
 				estado = "HALF OPEN";
-			} else if (result < limiteErr) {
-				estado = "open";
-			} 
+			}
 		return estado;
 	}
 }
