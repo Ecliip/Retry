@@ -9,6 +9,8 @@ public class DemolombokApplication {
 
 	public static void main(String[] args) {
 		Circuit circuit = new Circuit(3, 2, 20, 10);
+		String estado = circuito.getEstado();
+		System.out.println(estado);
 	}
 }
 
