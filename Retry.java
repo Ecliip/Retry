@@ -42,12 +42,7 @@ class Circuit {
 			} else if (result < limiteErr) {
 				estado = "open";
 			} 
-			
-			
-		
 		return estado;
-		
-		
 	}
 }
 
