@@ -29,16 +29,20 @@ class Circuit {
 	}
 	
 	public String getEstado() {
-		String estado = "unknown";
 		result = nErr / nActualIntento * 100;
-		if (result > limiteErr) {
-			estado = "OPEN";
-		} else if (nActualIntento == 0) {
-			estado = "CLOSE";
-		} else if (result < limiteErr) {
-			estado = "open";
-		} 
-		
+		String estado = "unknown";
+		if (nActualIntento >= nMaxIntentos) {
+			if (result > limiteErr) {
+				estado = "OPEN";
+			} else if (nActualIntento == 0) {
+				estado = "CLOSE";
+			} else if (result < limiteErr) {
+				estado = "open";
+			} 
+
+		} else {
+			estado = "diabled";
+		}
 		return estado;
 	}
 }
